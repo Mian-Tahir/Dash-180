@@ -1,0 +1,125 @@
+import { ArrowRightIcon } from "lucide-react";
+import React from "react";
+
+import { Button } from "../../../../components/ui/button";
+
+interface HeroSectionProps {
+  sectionRef?: React.RefObject<HTMLElement>;
+}
+
+export const HeroSection = ({ sectionRef }: HeroSectionProps): JSX.Element => {
+  return (
+    <section
+      ref={sectionRef as any}
+      className="w-full bg-gradient-to-b from-[#eaf6ff] via-[#b3d8f6] to-[#6daaec] md:bg-gradient-to-r md:from-[#eaf6ff] md:via-[#b3d8f6] md:to-[#6daaec]"
+    >
+      {/* Mobile layout: stacked, lighter then darker gradient */}
+      <div className="flex flex-col lg:hidden w-full">
+        {/* Heading/buttons - lighter gradient */}
+        <div className="flex flex-col items-center px-4 pt-8 w-full">
+          <img
+            className="w-16 h-16 mb-2"
+            alt="Fav icon"
+            src="/fav-icon.svg"
+          />
+          <div className="font-bold text-3xl text-center">
+            <span className="text-[#0d1527]">D</span>
+            <span className="text-[#55658a]">ata</span>
+            <span className="text-[#0d1527]"> A</span>
+            <span className="text-[#56658a]">nalytics</span>
+            <span className="text-[#0d1527]"> S</span>
+            <span className="text-[#56658a]">implified</span>
+            <span className="text-[#0d1527]"> H</span>
+            <span className="text-[#56658a]">olistically</span>
+          </div>
+          <div className="font-medium text-[#0d1527] text-lg mt-2 text-center">
+            Your Business at a Glance
+          </div>
+          <div className="text-[#0d1527] text-base leading-6 [font-family:'Inter',Helvetica]  font-normal mt-2 text-center">
+            Experience a transformative 180-degree perspective on your business with DASH 180°—an AI-powered dashboard that distills complex data into clear, actionable insights. Monitor key performance indicators in real time, uncover revenue opportunities, and make informed decisions with confidence.
+          </div>
+          <div className="text-[#0d1527cc] text-sm mt-2 [font-family:'Inter',Helvetica]  text-center">
+            Transform Your Hotel's Performance with Dash180º!
+          </div>
+          <div className="flex flex-col gap-3 mt-6 w-full">
+            <Button className="bg-[#05c168] rounded-[48px] text-white [font-family:'Inter',Helvetica]  font-normal text-base px-5 py-2.5 flex items-center gap-2.5 self-center max-w-sm justify-center">
+              Get started today
+              <ArrowRightIcon className="w-3.5 h-[12.01px]" />
+            </Button>
+            <div className="flex items-center justify-center w-full group cursor-pointer">
+              <div className="font-medium text-[#001943] text-base group-hover:text-[#05c168]  [font-family:'Inter',Helvetica]  group-hover:underline transition-colors duration-200">
+                Book a demo
+              </div>
+              <ArrowRightIcon className="w-5 h-5 ml-2 text-[#05c168]" />
+            </div>
+          </div>
+        </div>
+        {/* Image - darker gradient */}
+        <div className="w-full h-[50vw] min-h-60 max-h-96 mt-0 flex items-center justify-center">
+          <img
+            className="w-auto h-full max-h-96 object-contain"
+            alt="Dashboard visual"
+            src="/image 189.png"
+          />
+        </div>
+      </div>
+
+      {/* Desktop layout: split, left lighter, right darker, image right */}
+      <div className="hidden lg:flex w-full h-[820px]">
+        {/* Left: lighter gradient, headings/buttons */}
+        <div className="flex-1 relative flex items-center">
+          <div className="absolute w-[574px] h-[449px] top-[211px] left-[199px]">
+            <div className="absolute w-[358px] h-11 top-[405px] left-0 flex items-center gap-6 md:h-20 md:gap-10">
+              <Button className="bg-[#05c168] rounded-[48px] [font-family:'Inter',Helvetica]  text-white font-normal text-base px-5 py-2.5 flex items-center gap-2.5 md:text-xl md:px-12 md:py-6">
+                Get started today
+                  <ArrowRightIcon className="w-5 h-5 ml-2  md:w-8 md:h-8" />
+              </Button>
+              <div className="flex items-center group cursor-pointer">
+                <div className="font-medium text-[#001943] text-base tracking-[0] leading-6 whitespace-nowrap group-hover:text-[#05c168] group-hover:underline transition-colors duration-200 md:text-xl">
+                  Book a demo
+                </div>
+                <ArrowRightIcon className="w-5 h-5 ml-2 text-[#05c168] md:w-8 md:h-8" />
+              </div>
+            </div>
+            <div className="absolute w-[574px] h-6 top-[364px] left-0 [font-family:'Inter',Helvetica] font-normal text-[#0d1527cc] text-sm tracking-[0] leading-6">
+              Transform Your Hotel&apos;s Performance with Dash180º!
+            </div>
+            <div className="absolute w-[574px] h-[120px] top-[210px] left-0 text-[#0d1527] text-base leading-6 [font-family:'Inter',Helvetica] font-normal tracking-[0]">
+              Experience a transformative 180-degree perspective on your business
+              with DASH 180°—an AI-powered dashboard that distills complex data into
+              clear, actionable insights. Monitor key performance indicators in real
+              time, uncover revenue opportunities, and make informed decisions with
+              confidence.
+            </div>
+            <div className="absolute w-[574px] h-[29px] top-[165px] left-0 [font-family:'Inter',Helvetica] font-medium text-[#0d1527] text-2xl tracking-[-0.72px] leading-[normal]">
+              Your Business at a Glance
+            </div>
+            <div className="absolute w-[463px] h-[132px] -top-px left-[111px] [font-family:'Inter_Tight',Helvetica] font-normal text-transparent text-[55.2px] tracking-[-1.35px] leading-[66px]">
+              <span className="text-[#0d1527] tracking-[-0.74px]">D</span>
+              <span className="text-[#55658a] text-[41.8px] tracking-[-0.43px]">ata</span>
+              <span className="text-[#0d1527] tracking-[-0.74px]"> A</span>
+              <span className="text-[#56658a] text-[41.8px] tracking-[-0.43px]">nalytics</span>
+              <span className="text-[#0d1527] tracking-[-0.74px]"> S</span>
+              <span className="text-[#56658a] text-[41.8px] tracking-[-0.43px]">implified</span>
+              <span className="text-[#0d1527] tracking-[-0.74px]"> H</span>
+              <span className="text-[#56658a] text-[41.8px] tracking-[-0.43px]">olistically</span>
+            </div>
+            <img
+              className="absolute w-[77px] h-[98px] top-[17px] left-0"
+              alt="Fav icon"
+              src="/fav-icon.svg"
+            />
+          </div>
+        </div>
+        {/* Right: darker gradient, image */}
+        <div className="flex-1 flex items-center justify-center">
+          <img
+            className="h-[600px] w-auto object-contain"
+            alt="Dashboard visual"
+            src="/image 189.png"
+          />
+        </div>
+      </div>
+    </section>
+  );
+};

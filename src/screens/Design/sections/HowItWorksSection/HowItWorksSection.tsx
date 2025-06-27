@@ -201,6 +201,109 @@ const mobileProcessSteps = [
   },
 ];
 
+// Tablet-specific process steps with manual positions for step, icon, and line
+const tabletProcessSteps = [
+  {
+    no: "1",
+    title: "Gather",
+    icon: null, // No icon for first step
+    stepTop: "0px",
+    stepLeft: "200px",
+    lineTop: "-40px",
+    lineLeft: "230px",
+    iconTop: null,
+    iconLeft: null,
+  },
+  {
+    no: "2",
+    title: "Clean",
+    icon: "broom.png",
+    stepTop: "80px",
+    stepLeft: "220px",
+    lineTop: "76px",
+    lineLeft: "470px",
+    iconTop: "74px",
+    iconLeft: "340px",
+  },
+  {
+    no: "3",
+    title: "Normalize",
+    icon: "table.png",
+    stepTop: "200px",
+    stepLeft: "270px",
+    lineTop: "200px",
+    lineLeft: "110px",
+    iconTop: "200px",
+    iconLeft: "380px",
+  },
+  {
+    no: "4",
+    title: "Integrate",
+    icon: "Merge.png",
+    stepTop: "350px",
+    stepLeft: "200px",
+    lineTop: "360px",
+    lineLeft: "480px",
+    iconTop: "350px",
+    iconLeft: "350px",
+  },
+  {
+    no: "5",
+    title: "Algorithm Development",
+    icon: "timeline-arrow.png",
+    stepTop: "480px",
+    stepLeft: "340px",
+    lineTop: "500px",
+    lineLeft: "110px",
+    iconTop: "490px",
+    iconLeft: "280px",
+  },
+  {
+    no: "6",
+    title: "Machine Learning",
+    icon: "magnifying-glass.png",
+    stepTop: "640px",
+    stepLeft: "170px",
+    lineTop: "640px",
+    lineLeft: "480px",
+    iconTop: "638px",
+    iconLeft: "350px",
+  },
+  {
+    no: "7",
+    title: "Software enabled workflows",
+    icon: "bolt.png",
+    stepTop: "780px",
+    stepLeft: "330px",
+    lineTop: "780px",
+    lineLeft: "116px",
+    iconTop: "780px",
+    iconLeft: "270px",
+  },
+  {
+    no: "8",
+    title: "Computing and Storage",
+    icon: "cloud.png",
+    stepTop: "920px",
+    stepLeft: "180px",
+    lineTop: "930px",
+    lineLeft: "480px",
+    iconTop: "920px",
+    iconLeft: "360px",
+  },
+  {
+    no: "9",
+    title: "Analytics Out",
+    icon: "chart-line.png",
+    stepTop: "1220px",
+    stepLeft: "300px",
+    lineTop: "1180px",
+    lineLeft: "320px",
+    iconTop: "1050px",
+    iconLeft: "320px",
+  },
+];
+
 // Decorative line patterns component
 const LinePattern = ({ type }: { type: "small" | "medium" | "large" }) => {
   const lineCount = type === "small" ? 6 : type === "medium" ? 6 : 6;
@@ -442,7 +545,7 @@ export const HowItWorksSection = ({ sectionRef }: HowItWorksSectionProps): JSX.E
         </div>
 
         {/* Mobile Process Flow Diagram */}
-        <div className="relative block xl:hidden">
+        <div className="relative block md:hidden">
           <div className="relative w-full h-[1100px] bg-[url(/Union-mobile.png)] bg-contain bg-no-repeat bg-center">
             {mobileProcessSteps.map((step, index) => (
               <React.Fragment key={`mobile-step-${index}`}>
@@ -492,6 +595,70 @@ export const HowItWorksSection = ({ sectionRef }: HowItWorksSectionProps): JSX.E
           </div>
           {/* Demo button after the image, centered */}
           <div className="w-full flex justify-center mt-32 ">
+            <Button className="w-[140px] h-[140px] bg-[#00358e] text-[#f0faff] rounded-full flex flex-col items-center justify-center">
+              <span className="text-center text-sm mb-2 px-4">
+                Get your free demo
+              </span>
+              <img
+                className="w-[20px] h-[18px]"
+                alt="Arrow right"
+                src="/arrow-right.svg"
+              />
+            </Button>
+          </div>
+        </div>
+
+        {/* Tablet Process Flow Diagram */}
+        <div className="relative hidden md:block xl:hidden">
+          <div className="relative w-full h-[1200px] bg-[url(/Union-mobile.png)] bg-contain bg-no-repeat bg-center">
+            {tabletProcessSteps.map((step, index) => (
+              <React.Fragment key={`tablet-step-${index}`}>
+                {/* Absolutely positioned vertical line */}
+                <div
+                  className="absolute"
+                  style={{
+                    top: step.lineTop,
+                    left: step.lineLeft,
+                  }}
+                >
+                  <LinePattern
+                    type={
+                      index === tabletProcessSteps.length - 1
+                        ? "large"
+                        : index === 0
+                          ? "medium"
+                          : "small"
+                    }
+                  />
+                </div>
+                {/* Absolutely positioned icon (if not first step) */}
+                {step.icon && (
+                  <img
+                    src={`/${step.icon}`}
+                    alt={step.title}
+                    className="absolute w-8 h-8 object-contain"
+                    style={{
+                      top: step.iconTop,
+                      left: step.iconLeft,
+                    }}
+                  />
+                )}
+                {/* Absolutely positioned step heading/number */}
+                <div
+                  className="absolute font-medium text-black text-base tracking-[0] leading-normal"
+                  style={{
+                    top: step.stepTop,
+                    left: step.stepLeft,
+                    width: '180px',
+                  }}
+                >
+                  <span className="mr-2 text-[#174899] font-bold">{step.no}.</span>{step.title}
+                </div>
+              </React.Fragment>
+            ))}
+          </div>
+          {/* Demo button after the image, centered */}
+          <div className="w-full flex justify-center mt-32">
             <Button className="w-[140px] h-[140px] bg-[#00358e] text-[#f0faff] rounded-full flex flex-col items-center justify-center">
               <span className="text-center text-sm mb-2 px-4">
                 Get your free demo

@@ -658,7 +658,7 @@ export const HowItWorksSection = ({ sectionRef }: HowItWorksSectionProps): JSX.E
             ))}
           </div>
           {/* Demo button after the image, centered */}
-          <div className="w-full flex justify-center mt-32">
+          <div className="w-full flex justify-center mt-28">
             <Button className="w-[140px] h-[140px] bg-[#00358e] text-[#f0faff] rounded-full flex flex-col items-center justify-center">
               <span className="text-center text-sm mb-2 px-4">
                 Get your free demo

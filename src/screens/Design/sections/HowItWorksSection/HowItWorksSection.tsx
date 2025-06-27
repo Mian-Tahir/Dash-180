@@ -98,6 +98,109 @@ const processSteps = [
   },
 ];
 
+// Mobile-specific process steps with manual positions for step, icon, and line
+const mobileProcessSteps = [
+  {
+    no: "1",
+    title: "Gather",
+    icon: null, // No icon for first step
+    stepTop: "-22px",
+    stepLeft: "88px",
+    lineTop: "-62px",
+    lineLeft: "112px",
+    iconTop: null,
+    iconLeft: null,
+  },
+  {
+    no: "2",
+    title: "Clean",
+    icon: "broom.png",
+    stepTop: "60px",
+    stepLeft: "80px",
+    lineTop: "56px",
+    lineLeft: "294px",
+    iconTop: "56px",
+    iconLeft: "190px",
+  },
+  {
+    no: "3",
+    title: "Normalize",
+    icon: "table.png",
+    stepTop: "196px",
+    stepLeft: "196px",
+    lineTop: "195px",
+    lineLeft: "6px",
+    iconTop: "190px",
+    iconLeft: "150px",
+  },
+  {
+    no: "4",
+    title: "Integrate",
+    icon: "Merge.png",
+    stepTop: "320px",
+    stepLeft: "70px",
+    lineTop: "320px",
+    lineLeft: "300px",
+    iconTop: "320px",
+    iconLeft: "180px",
+  },
+  {
+    no: "5",
+    title: "Algorithm Development",
+    icon: "timeline-arrow.png",
+    stepTop: "434px",
+    stepLeft: "200px",
+    lineTop: "450px",
+    lineLeft: "8px",
+    iconTop: "450px",
+    iconLeft: "140px",
+  },
+  {
+    no: "6",
+    title: "Machine Learning",
+    icon: "magnifying-glass.png",
+    stepTop: "580px",
+    stepLeft: "30px",
+    lineTop: "580px",
+    lineLeft: "300px",
+    iconTop: "580px",
+    iconLeft: "210px",
+  },
+  {
+    no: "7",
+    title: "Software enabled workflows",
+    icon: "bolt.png",
+    stepTop: "710px",
+    stepLeft: "170px",
+    lineTop: "730px",
+    lineLeft: "10px",
+    iconTop: "720px",
+    iconLeft: "130px",
+  },
+  {
+    no: "8",
+    title: "Computing and Storage",
+    icon: "cloud.png",
+    stepTop: "840px",
+    stepLeft: "40px",
+    lineTop: "850px",
+    lineLeft: "300px",
+    iconTop: "840px",
+    iconLeft: "200px",
+  },
+  {
+    no: "9",
+    title: "Analytics Out",
+    icon: "chart-line.png",
+    stepTop: "1100px",
+    stepLeft: "160px",
+    lineTop: "1140px",
+    lineLeft: "180px",
+    iconTop: "970px",
+    iconLeft: "190px",
+  },
+];
+
 // Decorative line patterns component
 const LinePattern = ({ type }: { type: "small" | "medium" | "large" }) => {
   const lineCount = type === "small" ? 6 : type === "medium" ? 6 : 6;
@@ -255,7 +358,7 @@ interface HowItWorksSectionProps {
 
 export const HowItWorksSection = ({ sectionRef }: HowItWorksSectionProps): JSX.Element => {
   return (
-    <section ref={sectionRef as any} className="relative md-h-[2300px] xl:h-[2060px] w-full py-24 px-8 md:px-16 lg:px-32 bg-[#f0faff] font-sans">
+    <section ref={sectionRef as any} className="relative h-[1800px] xl:h-[2060px] w-full py-24 px-8 md:px-16 lg:px-32 bg-[#f0faff] font-sans">
       <div className="max-w-6xl mx-auto relative font-sans">
         {/* Header */}
         <div className="mb-16 text-center">
@@ -321,7 +424,7 @@ export const HowItWorksSection = ({ sectionRef }: HowItWorksSectionProps): JSX.E
               />
               {/* Show the demo button only after the last step */}
               {index === processSteps.length - 1 && (
-                <div className="w-[188px] h-[188px] mx-auto mt-20 flex justify-center items-center">
+                <div className="w-[188px] h-[188px] mx-auto mt-40 flex justify-center items-center">
                   <Button className="w-[188px] h-[188px] bg-[#00358e] text-[#f0faff] rounded-full flex flex-col items-center justify-center">
                     <span className="text-center text-base mb-4 px-6">
                       Get your free demo
@@ -338,55 +441,68 @@ export const HowItWorksSection = ({ sectionRef }: HowItWorksSectionProps): JSX.E
           ))}
         </div>
 
-        {/* Vertical Steps for mobile/tablet/laptop screens */}
-        <div className="block xl:hidden w-full flex flex-col items-center gap-12">
-          {processSteps.map((step, index) => (
-            <div key={`vertical-step-${index}`} className="flex flex-col items-center w-full">
-              {/* LinePattern at the top */}
-              <LinePattern
-                type={
-                  index === processSteps.length - 1
-                    ? "large"
-                    : index === 0
-                      ? "medium"
-                      : "small"
-                }
-              />
-              {/* Step heading/title */}
-              <div className="font-medium text-black text-xl text-center tracking-[0] leading-normal mb-2 mt-4">
-                <span className="mr-2 text-[#174899] font-bold">{step.No}.</span>{step.title}
-              </div>
-              {/* Description */}
-              <div className="font-inter-16px-regular text-black text-base text-center tracking-[0] leading-6 max-w-[320px] mb-4">
-                {step.description}
-              </div>
-              {/* Icon at the bottom: use Lucide icon for first step, image for others */}
-              {index === 0 ? (
-                <DatabaseIcon className="w-12 h-12 text-[#a2bcdc] mt-2" />
-              ) : (
-                <img
-                  src={`/${step.icon}`}
-                  alt={step.title}
-                  className="w-12 h-12 object-contain mt-2"
-                />
-              )}
-              {/* Show the demo button only after the last step */}
-              {index === processSteps.length - 1 && (
-                <div className="w-[188px] h-[188px] mx-auto mt-10 flex justify-center items-center">
-                  <Button className="w-[188px] h-[188px] bg-[#00358e] text-[#f0faff] rounded-full flex flex-col items-center justify-center">
-                    <span className="text-center text-base mb-4 px-6">
-                      Get your free demo
-                    </span>
-                    <img
-                      className="w-[26px] h-[22px]"
-                      alt="Arrow right"
-                      src="/arrow-right.svg"
-                    />
-                  </Button>
+        {/* Mobile Process Flow Diagram */}
+        <div className="relative block xl:hidden">
+          <div className="relative w-full h-[1100px] bg-[url(/Union-mobile.png)] bg-contain bg-no-repeat bg-center">
+            {mobileProcessSteps.map((step, index) => (
+              <React.Fragment key={`mobile-step-${index}`}>
+                {/* Absolutely positioned vertical line */}
+                <div
+                  className="absolute"
+                  style={{
+                    top: step.lineTop,
+                    left: step.lineLeft,
+                  }}
+                >
+                  <LinePattern
+                    type={
+                      index === mobileProcessSteps.length - 1
+                        ? "large"
+                        : index === 0
+                          ? "medium"
+                          : "small"
+                    }
+                  />
                 </div>
-              )}
-            </div>
-          ))}
+                {/* Absolutely positioned icon (if not first step) */}
+                {step.icon && (
+                  <img
+                    src={`/${step.icon}`}
+                    alt={step.title}
+                    className="absolute w-8 h-8 object-contain"
+                    style={{
+                      top: step.iconTop,
+                      left: step.iconLeft,
+                    }}
+                  />
+                )}
+                {/* Absolutely positioned step heading/number */}
+                <div
+                  className="absolute font-medium text-black text-base tracking-[0] leading-normal"
+                  style={{
+                    top: step.stepTop,
+                    left: step.stepLeft,
+                    width: '180px',
+                  }}
+                >
+                  <span className="mr-2 text-[#174899] font-bold">{step.no}.</span>{step.title}
+                </div>
+              </React.Fragment>
+            ))}
+          </div>
+          {/* Demo button after the image, centered */}
+          <div className="w-full flex justify-center mt-32 ">
+            <Button className="w-[140px] h-[140px] bg-[#00358e] text-[#f0faff] rounded-full flex flex-col items-center justify-center">
+              <span className="text-center text-sm mb-2 px-4">
+                Get your free demo
+              </span>
+              <img
+                className="w-[20px] h-[18px]"
+                alt="Arrow right"
+                src="/arrow-right.svg"
+              />
+            </Button>
+          </div>
         </div>
       </div>
     </section>

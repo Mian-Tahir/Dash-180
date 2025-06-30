@@ -1,5 +1,7 @@
 import  { useRef } from "react";
+import { Toaster } from "react-hot-toast";
 import Navbar from "../../components/ui/Navbar";
+
 import { AboutUsSection } from "./sections/AboutUsSection";
 import { BenefitsSection } from "./sections/BenefitsSection";
 import { ContactSection } from "./sections/ContactSection";
@@ -9,6 +11,7 @@ import { HeroSection } from "./sections/HeroSection";
 import { HowItWorksSection } from "./sections/HowItWorksSection/HowItWorksSection";
 import { PricingSection } from "./sections/PricingSection";
 import { UseCasesSection } from "./sections/UseCasesSection";
+
 
 export const Design = (): JSX.Element => {
   const sectionRefs = {
@@ -24,6 +27,7 @@ export const Design = (): JSX.Element => {
 
   return (
     <div className="bg-white flex flex-col items-center w-full">
+        <Toaster position="top-right" reverseOrder={false} />
       <Navbar sectionRefs={sectionRefs} />
       <HeroSection sectionRef={sectionRefs.home} />
       <AboutUsSection sectionRef={sectionRefs.about} />

@@ -196,6 +196,12 @@ export const UseCasesSection = ({ sectionRef }: UseCasesSectionProps): JSX.Eleme
     });
   };
 
+  // Image lazy loading and transition state
+  const [imageLoaded, setImageLoaded] = useState(false);
+  useEffect(() => {
+    setImageLoaded(false);
+  }, [activeIndex]);
+
   return (
     <section
       ref={sectionRef as any}
@@ -268,10 +274,15 @@ export const UseCasesSection = ({ sectionRef }: UseCasesSectionProps): JSX.Eleme
           <div className="flex flex-col w-full lg:w-auto gap-3 lg:ml-48 order-2">
             <Card className="border-0 rounded-none overflow-hidden">
               <CardContent className="p-0">
-                <div
-                  className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[700px] lg:w-[900px] bg-cover bg-center"
-                  style={{ backgroundImage: `url(${features[activeIndex ?? 0].image})` }}
-                />
+                <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[700px] lg:w-[900px]">
+                  <img
+                    src={features[activeIndex ?? 0].image}
+                    alt={features[activeIndex ?? 0].title}
+                    loading="lazy"
+                    onLoad={() => setImageLoaded(true)}
+                    className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
+                  />
+                </div>
               </CardContent>
             </Card>
             {/* Navigation Controls */}

@@ -52,20 +52,18 @@ export const HeroSection = ({ sectionRef }: HeroSectionProps): JSX.Element => {
           <div className="text-[#0d1527] text-base leading-6 [font-family:'Inter',Helvetica]  font-normal mt-2 text-center">
             Experience a transformative 180-degree perspective on your business with DASH 180°—an AI-powered dashboard that distills complex data into clear, actionable insights. Monitor key performance indicators in real time, uncover revenue opportunities, and make informed decisions with confidence.
           </div>
-          <div className="text-[#0d1527cc] text-sm mt-2 [font-family:'Inter',Helvetica]  text-center">
+          <div className="text-[#0d1527cc] text-sm mt-8 [font-family:'Inter',Helvetica]  text-center">
             Transform Your Hotel's Performance with Dash180º!
           </div>
-          <div className="flex flex-col gap-3 mt-6 w-full">
-            <Button className="bg-[#05c168] rounded-[48px] text-white   font-normal text-base px-5 py-2.5 flex items-center gap-2.5 self-center max-w-sm justify-center">
+          <div className="flex flex-row gap-3 mt-14 w-full justify-center">
+            <Button className="bg-[#05c168] rounded-[48px] text-white font-normal text-base px-5 py-2.5 flex items-center gap-2.5">
               Get started today
               <ArrowRightIcon className="w-3.5 h-[12.01px]" />
             </Button>
-            <div className="flex items-center justify-center w-full group cursor-pointer">
-              <div className="font-medium text-[#001943] text-base group-hover:text-[#05c168]    group-hover:underline transition-colors duration-200">
-                Book a demo
-              </div>
+            <button className="flex items-center font-medium text-[#001943] text-base hover:text-[#05c168] hover:underline transition-colors duration-200">
+              Book a demo
               <ArrowRightIcon className="w-5 h-5 ml-2 text-[#05c168]" />
-            </div>
+            </button>
           </div>
         </div>
       </div>

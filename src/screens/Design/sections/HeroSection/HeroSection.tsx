@@ -74,7 +74,7 @@ export const HeroSection = ({ sectionRef }: HeroSectionProps): JSX.Element => {
         <div className="flex-1 relative flex items-center">
           <div className="absolute w-[574px] h-[449px] top-[211px] left-[199px]">
             <div className="absolute w-[358px] h-11 top-[405px] left-0 flex items-center gap-6 md:h-20 md:gap-10">
-              <Button className="bg-[#05c168] rounded-[48px] [font-family:'Inter',Helvetica]  text-white font-normal text-base px-5 py-2.5 flex items-center gap-2.5 md:text-xl md:px-10 md:py-6">
+              <Button className="bg-[#05c168] rounded-[48px] [font-family:'Inter',Helvetica]  text-white font-normal text-base px-5 py-2.5 flex items-center gap-2.5 md:text-xl md:px-8 md:py-6">
                 Get started today
                 <ArrowRightIcon className="w-6 h-6 ml-2 !md:w-12 !md:h-12" />
               </Button>

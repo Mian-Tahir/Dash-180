@@ -70,8 +70,8 @@ export const BenefitsSection = ({ sectionRef }: BenefitsSectionProps): JSX.Eleme
   ];
 
   return (
-    <section ref={sectionRef as any} className="w-full py-24 bg-white">
-      <div className="container mx-auto px-4">
+    <section ref={sectionRef as any} className="w-full py-24 bg-white px-6 sm:px-8 md:px-16 lg:px-24 xl:px-32">
+      <div className="container mx-auto">
         <div className="flex flex-col items-center text-center mb-16">
           <span className="text-[#343434] font-inter-13px-regular text-[13px] mb-4 uppercase tracking-widest">
             WHY DASH180?

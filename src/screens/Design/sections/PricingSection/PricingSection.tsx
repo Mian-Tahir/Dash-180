@@ -79,7 +79,7 @@ export const PricingSection = ({ sectionRef }: PricingSectionProps): JSX.Element
     <section ref={sectionRef as any} className="flex flex-col items-center gap-[31px] py-0 bg-white w-full px-4 sm:px-6 lg:px-0">
       <img className="w-[27.18px] h-[42.18px]" alt="Scg" src="/scg.svg" />
 
-      <h2 className="font-normal text-black text-2xl sm:text-3xl lg:text-[41px] text-center tracking-[0] leading-normal [font-family:'Inter_Tight',Helvetica]">
+      <h2 className="font-normal text-black text-2xl sm:text-3xl lg:text-[41px] text-center tracking-[0] leading-normal ">
         Business Plans
       </h2>
 
@@ -120,7 +120,7 @@ export const PricingSection = ({ sectionRef }: PricingSectionProps): JSX.Element
                   <CardContent className="flex flex-col items-start gap-[22px] p-7">
                     <div className="relative self-stretch w-full h-6">
                       <div
-                        className={`absolute h-6 top-0 left-0 ${plan.isPopular ? "text-[#1e3113]" : "opacity-10 text-black"} font-medium text-base tracking-[0] leading-6 whitespace-nowrap [font-family:'Inter',Helvetica]`}
+                        className={"absolute h-6 top-0 left-0 text-[#1e3113] font-medium text-base tracking-[0] leading-6 whitespace-nowrap [font-family:'Inter',Helvetica]"}
                       >
                         {plan.type}
                       </div>
@@ -176,7 +176,7 @@ export const PricingSection = ({ sectionRef }: PricingSectionProps): JSX.Element
                 <CardContent className="flex flex-col items-start gap-[22px] p-6">
                   <div className="relative self-stretch w-full h-6">
                     <div
-                      className={`absolute h-6 top-0 left-0 ${plan.isPopular ? "text-[#1e3113]" : "opacity-10 text-black"} font-medium text-base tracking-[0] leading-6 whitespace-nowrap [font-family:'Inter',Helvetica]`}
+                      className={"absolute h-6 top-0 left-0 text-[#1e3113] font-medium text-base tracking-[0] leading-6 whitespace-nowrap [font-family:'Inter',Helvetica]"}
                     >
                       {plan.type}
                     </div>
@@ -342,7 +342,7 @@ export const PricingSection = ({ sectionRef }: PricingSectionProps): JSX.Element
             </div>
 
             <Button className="w-full sm:w-[170px] h-[46px] bg-[#05c168] rounded-[48px] shadow-[0px_2px_1px_#95a0b214] hover:bg-[#04a056]">
-              <span className="font-normal text-white text-[15px] text-center tracking-[0] leading-6 whitespace-nowrap [font-family:'Inter',Helvetica]">
+              <span className="font-normal text-white text-[15px] text-center tracking-[0] leading-6 whitespace-nowrap ">
                 Contact Us
               </span>
               <img className="w-6 h-6 ml-2" alt="Svg" src="/svg.svg" />

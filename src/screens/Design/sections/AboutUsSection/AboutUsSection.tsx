@@ -1,6 +1,9 @@
 import React from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useRef, useState, useEffect } from "react";
 
 interface AboutUsSectionProps {
   sectionRef?: React.RefObject<HTMLElement>;
@@ -42,10 +45,44 @@ export const AboutUsSection = ({ sectionRef }: AboutUsSectionProps): JSX.Element
     },
   ];
 
+  // Parallax state for dashboard image
+  const [parallax, setParallax] = useState(0);
+  const imageRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (imageRef.current) {
+        const rect = imageRef.current.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          setParallax((rect.top - windowHeight / 2) * 0.15);
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Animation for fade/slide-up
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+
   return (
-    <section ref={sectionRef as any} className="w-full min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-[120px] py-8 sm:py-12 md:py-16 lg:py-[60px] bg-white">
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-[80px] w-full max-w-[1400px] mx-auto">
-        <div className="w-full lg:max-w-[420px] flex flex-col gap-6 lg:gap-[28px]">
+    <section ref={sectionRef as any} className="w-full min-h-screen flex items-center justify-center px-6 sm:px-8 md:px-16 lg:px-24 xl:px-32 py-8 sm:py-12 md:py-16 lg:py-[60px] bg-white">
+      
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 40 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-[80px] w-full max-w-[1400px] mx-auto"
+      >
+        <motion.div
+          style={{ y: parallax * 0.5 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={inView ? { opacity: 1, y: parallax * 0.5 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="w-full lg:max-w-[420px] flex flex-col gap-6 lg:gap-[28px]"
+        >
           <span className="self-stretch font-inter-13px-regular text-[#001943] text-xs sm:text-sm lg:text-[length:var(--inter-13px-regular-font-size)] tracking-[var(--inter-13px-regular-letter-spacing)] leading-[var(--inter-13px-regular-line-height)] whitespace-nowrap">
             ABOUT
           </span>
@@ -119,16 +156,21 @@ export const AboutUsSection = ({ sectionRef }: AboutUsSectionProps): JSX.Element
               src="/arrow-right.svg"
             />
           </Button>
-        </div>
+        </motion.div>
 
         <div className="w-full lg:flex-1 flex justify-center items-center relative">
-          <img
-            className="w-full max-w-[350px] sm:max-w-[400px] lg:w-[450px] h-auto lg:h-[649px] object-cover"
+          <motion.img
+            ref={imageRef}
+            className="w-full max-w-[350px] sm:max-w-[400px] lg:w-[700px]  lg:h-[700px] "
             alt="Dashboard preview"
-            src="/image--3--1.png"
+            srcSet="/Group-39232.png"
+            style={{ y: parallax }}
+            initial={{ opacity: 0, y: 40 }}
+            animate={inView ? { opacity: 1, y: parallax } : {}}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

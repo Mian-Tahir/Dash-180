@@ -495,7 +495,7 @@ export const HowItWorksSection = ({ sectionRef }: HowItWorksSectionProps): JSX.E
                   <img
                     src={`/${step.icon}`}
                     alt={step.title}
-                    style={{ width: 46, height: 46, objectFit: 'contain' }}
+                    style={{ width: 32, height: 32, objectFit: 'contain' }}
                   />
                 </div>
               )
@@ -528,7 +528,7 @@ export const HowItWorksSection = ({ sectionRef }: HowItWorksSectionProps): JSX.E
               {/* Show the demo button only after the last step */}
               {index === processSteps.length - 1 && (
                 <div className="w-[188px] h-[188px] mx-auto mt-40 flex justify-center items-center">
-                  <Button className="w-[188px] h-[188px] bg-[#00358e] text-[#f0faff] rounded-full flex flex-col items-center justify-center">
+                  <Button className="w-[188px] h-[188px] bg-[#00358e] text-[#f0faff] rounded-full flex flex-col items-center justify-center transform transition-transform duration-300 ease-in-out hover:scale-110">
                     <span className="text-center text-base mb-4 px-6">
                       Get your free demo
                     </span>
@@ -572,7 +572,7 @@ export const HowItWorksSection = ({ sectionRef }: HowItWorksSectionProps): JSX.E
                   <img
                     src={`/${step.icon}`}
                     alt={step.title}
-                    className="absolute w-8 h-8 object-contain"
+                    className="absolute w-6 h-6 object-contain"
                     style={{
                       top: step.iconTop,
                       left: step.iconLeft,
@@ -595,7 +595,7 @@ export const HowItWorksSection = ({ sectionRef }: HowItWorksSectionProps): JSX.E
           </div>
           {/* Demo button after the image, centered */}
           <div className="w-full flex justify-center mt-32 ">
-            <Button className="w-[140px] h-[140px] bg-[#00358e] text-[#f0faff] rounded-full flex flex-col items-center justify-center">
+            <Button className="w-[140px] h-[140px] bg-[#00358e] text-[#f0faff] rounded-full flex flex-col items-center justify-center transform transition-transform duration-300 ease-in-out hover:scale-110">
               <span className="text-center text-sm mb-2 px-4">
                 Get your free demo
               </span>
@@ -636,7 +636,7 @@ export const HowItWorksSection = ({ sectionRef }: HowItWorksSectionProps): JSX.E
                   <img
                     src={`/${step.icon}`}
                     alt={step.title}
-                    className="absolute w-8 h-8 object-contain"
+                    className="absolute w-6 h-6 object-contain"
                     style={{
                       top: step.iconTop,
                       left: step.iconLeft,
@@ -659,7 +659,7 @@ export const HowItWorksSection = ({ sectionRef }: HowItWorksSectionProps): JSX.E
           </div>
           {/* Demo button after the image, centered */}
           <div className="w-full flex justify-center mt-28">
-            <Button className="w-[140px] h-[140px] bg-[#00358e] text-[#f0faff] rounded-full flex flex-col items-center justify-center">
+            <Button className="w-[140px] h-[140px] bg-[#00358e] text-[#f0faff] rounded-full flex flex-col items-center justify-center transform transition-transform duration-300 ease-in-out hover:scale-110">
               <span className="text-center text-sm mb-2 px-4">
                 Get your free demo
               </span>

@@ -62,7 +62,7 @@ export const FaqSection = ({ sectionRef }: FaqSectionProps): JSX.Element => {
                   <AccordionItem
                     key={`faq-item-${index}`}
                     value={`item-${index}`}
-                    className={`${index === 0 ? "bg-white" : "bg-[#f5f7fa]"} rounded-xl border border-solid border-[#e1e4ea] shadow-[0px_1px_0.5px_#95a0b114] mb-2`}
+                    className={` "bg-white"} rounded-xl border border-solid border-[#e1e4ea] shadow-[0px_1px_0.5px_#95a0b114] mb-2`}
                   >
                     <AccordionTrigger className="px-3 sm:px-6 py-3 sm:py-4 font-medium text-[#222530] text-sm sm:text-base text-left">
                       {item.question}

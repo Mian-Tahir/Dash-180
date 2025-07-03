@@ -89,7 +89,7 @@ export const FooterSection = (): JSX.Element => {
               src="/image-1.png"
             />
 
-            <p className="text-[#f6f7f9] text-[13px] leading-[19.5px] font-normal [font-family:'Inter',Helvetica] max-w-[191px]">
+            <p className="text-[#f6f7f9] text-[13px] leading-[19.5px] font-normal  max-w-[191px]">
               Revolutionize Your Business Experience with Dash180: The Ultimate
               Solution for Seamless Service
             </p>
@@ -112,24 +112,34 @@ export const FooterSection = (): JSX.Element => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Contact section */}
               <div className="md:col-span-3">
-                <p className="font-normal text-[#f6f7f9] text-[13px] [font-family:'Inter',Helvetica]  leading-[19.5px] max-w-[328px]">
+                <p className="font-normal text-[#f6f7f9] text-[13px]   leading-[19.5px] max-w-[328px]">
                   Feel free to reach out on our official email directly for any
                   queries, interest or concerns.
                 </p>
 
                 <div className="mt-8 font-bold text-[#f6f7f9] text-base leading-4">
-                  <span className="font-inter-16px-regular">contactus</span>
-                  <a
-                    href="mailto:sq09paf8819@dash180degree.com"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="font-inter-16px-regular"
-                  >
-                    @dash180degree.com
-                  </a>
+                  <span className="relative group inline-flex items-center gap-1">
+                    <span className="font-inter-16px-regular">contactus</span>
+                    <a
+                      href="mailto:sq09paf8819@dash180degree.com"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      className="font-inter-16px-regular z-10 relative"
+                    >
+                      @dash180degree.com
+                    </a>
+                    <span
+                      className="
+                        absolute left-0 bottom-[-6px] w-full h-[2px] 
+                        bg-[#f6f7f9]/40 
+                        transition-all duration-300 
+                        group-hover:bg-[#f6f7f9] 
+                        group-hover:h-[2px]
+                        z-0
+                      "
+                    />
+                  </span>
                 </div>
-
-                <Separator className="w-[257px] mt-4 bg-[#f6f7f9]/20" />
               </div>
 
               {/* Social links */}
@@ -181,7 +191,7 @@ export const FooterSection = (): JSX.Element => {
                       <p className="font-inter-13px-regular text-[#f6f7f9]">
                         {office.country}
                       </p>
-                      <p className="text-[#cbcbcb] text-[13px]  [font-family:'Inter',Helvetica] leading-[19.5px] font-normal">
+                      <p className="text-[#cbcbcb] text-[13px]  leading-[19.5px] font-normal">
                         {office.address}
                       </p>
                     </div>
@@ -194,22 +204,22 @@ export const FooterSection = (): JSX.Element => {
       </div>
       {/* Legal links and copyright row - OUTSIDE main container */}
       <div className="w-full border-t border-[#f6f7f9]/10 mt-8">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row md:items-center justify-between py-6 space-y-4 md:space-y-0">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row md:items-center justify-between py-4 space-y-4 md:space-y-0">
           <div className="flex space-x-12 items-center">
             <a
               href="#"
-              className="font-inter-13px-regular text-[#f6f7f9] border-b border-[#f6f7f9] pb-1 hover:underline"
+              className="font-inter-11px-regular text-[#f6f7f9] border-b border-[#f6f7f9] pb-1 hover:underline"
             >
               Terms & Conditions
             </a>
             <a
               href="#"
-              className="font-inter-13px-regular text-[#f6f7f9] border-b border-[#f6f7f9] pb-1 hover:underline"
+              className="font-inter-11px-regular text-[#f6f7f9] border-b border-[#f6f7f9] pb-1 hover:underline"
             >
               Privacy Policy
             </a>
           </div>
-          <p className=" text-[#848484] [font-family:'Inter',Helvetica] whitespace-nowrap">
+          <p className=" text-[#848484]  whitespace-nowrap">
             © 2025 DASH180º - All rights reserved
           </p>
         </div>

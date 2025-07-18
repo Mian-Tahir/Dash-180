@@ -25,6 +25,14 @@ export const PricingSection = ({ sectionRef }: PricingSectionProps): JSX.Element
       description:
         "Includes essential features like monthly revenue analytics, KPI monitoring, and basic forecasting.",
       isPopular: false,
+      features: [
+        "Monthly Revenue Analytics",
+        "Monitoring",
+        "Basic Forecasting Tools",
+        "Dedicated Support",
+        "One Time Installation Fee",
+        "Yearly Service Fee",
+      ],
     },
     {
       type: "Pro Plan",
@@ -32,6 +40,17 @@ export const PricingSection = ({ sectionRef }: PricingSectionProps): JSX.Element
       description:
         "Adds advanced features such as segmentation breakdowns, P&L analysis, and customizable dashboards.",
       isPopular: true,
+      features: [
+        "Monthly Revenue Analytics",
+        "Advanced Forecasting Tools",
+        "P&L Analysis",
+        "Yearly Installation Fee",
+        "Monitoring",
+        "Advanced Segmentation",
+        "Custom Dashboard",
+        "One Time Installation Fee",
+        "Yearly Service Fee",
+      ],
     },
     {
       type: "Enterprise Plan",
@@ -39,8 +58,25 @@ export const PricingSection = ({ sectionRef }: PricingSectionProps): JSX.Element
       description:
         "Tailored solutions for large hotel chains or multi-property portfolios.",
       isPopular: false,
+      features: [
+        "Monthly Revenue Analytics",
+        "Custom Forecasting Tools",
+        "P&L Analysis",
+        "Yearly Installation Fee",
+        "Monitoring",
+        "Advanced Segmentation",
+        "Custom Dashboard",
+        "Custom  Installation Fee",
+        "Custom Yearly Service Fee",
+      ],
     },
   ];
+
+  // State for mobile feature toggles
+  const [openIndex, setOpenIndex] = React.useState<number | null>(null);
+  const handleToggle = (idx: number) => {
+    setOpenIndex(openIndex === idx ? null : idx);
+  };
 
   // Feature comparison data
   const features = [
@@ -77,15 +113,16 @@ export const PricingSection = ({ sectionRef }: PricingSectionProps): JSX.Element
 
   return (
     <section ref={sectionRef as any} className="flex flex-col items-center gap-[31px] py-0 bg-white w-full px-4 sm:px-6 lg:px-0">
+      {/* Heading and top icon - only show on lg and up */}
+      <div className="hidden lg:flex flex-col items-center w-full">
       <img className="w-[27.18px] h-[42.18px]" alt="Scg" src="/scg.svg" />
-
       <h2 className="font-normal text-black text-2xl sm:text-3xl lg:text-[41px] text-center tracking-[0] leading-normal ">
         Business Plans
       </h2>
-
       <p className="text-black text-center font-inter-16px-regular text-sm sm:text-base lg:text-[length:var(--inter-16px-regular-font-size)] leading-[var(--inter-16px-regular-line-height)] font-[number:var(--inter-16px-regular-font-weight)] tracking-[var(--inter-16px-regular-letter-spacing)] [font-style:var(--inter-16px-regular-font-style)] max-w-md">
         Affordable Insights for Maximum ROI
       </p>
+      </div>
 
       {/* Desktop Layout */}
       <div className="hidden lg:block w-full max-w-[1050px] h-[347px] relative rounded-2xl overflow-hidden">
@@ -146,15 +183,8 @@ export const PricingSection = ({ sectionRef }: PricingSectionProps): JSX.Element
 
       {/* Mobile Layout */}
       <div className="lg:hidden w-full max-w-md mx-auto relative">
-        {/* Background gradient for mobile */}
-        <div className="absolute inset-0 rounded-2xl overflow-hidden">
-          <img
-            className="w-full h-full object-cover"
-            alt="Rectangle"
-            src="/rectangle-3905.svg"
-          />
-        </div>
-        
+        {/* Lighter gradient background for mobile */}
+        <div className="absolute inset-0 rounded-2xl overflow-hidden bg-gradient-to-b from-[#E6FAF9] to-[#F8FEFE]" />
         <div className="relative z-10 flex flex-col gap-4 p-4">
           {plans.map((plan, index) => (
             <div key={`mobile-plan-${index}`} className="w-full">
@@ -189,8 +219,38 @@ export const PricingSection = ({ sectionRef }: PricingSectionProps): JSX.Element
                     Monthly / Yearly
                   </div>
 
-                  <div className="relative w-full text-[#75798a] text-sm leading-6 font-inter-16px-regular font-[number:var(--inter-16px-regular-font-weight)] tracking-[var(--inter-16px-regular-letter-spacing)] [font-style:var(--inter-16px-regular-font-style)]">
+                  <div className="relative w-full text-[#75798A] font-inter-16px-regular font-normal text-[16px] leading-6 tracking-[0] align-middle mb-0" style={{ fontFamily: 'Inter, Helvetica', fontWeight: 400, fontStyle: 'normal', letterSpacing: 0, lineHeight: '24px', verticalAlign: 'middle' }}>
                     {plan.description}
+                  </div>
+
+                  {/* See/Hide features button and feature list for mobile */}
+                  <button
+                    type="button"
+                    onClick={() => handleToggle(index)}
+                    className="mt-1 mb-0 p-0 text-left text-[#3ACFC8] font-medium text-[16px] leading-6 font-['Inter'] focus:outline-none transition-colors duration-150 cursor-pointer"
+                    style={{
+                      fontFamily: 'Inter, Helvetica',
+                      fontWeight: 500,
+                      fontStyle: 'normal',
+                      letterSpacing: 0,
+                      lineHeight: '24px',
+                      verticalAlign: 'middle',
+                      background: 'none',
+                      border: 'none',
+                      boxShadow: 'none',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    {openIndex === index ? 'Hide features' : 'See features'}
+                  </button>
+                  <div
+                    className={`w-full transition-all duration-300 ease-in-out overflow-hidden ${openIndex === index ? 'max-h-[500px] mt-1 mb-0' : 'max-h-0'}`}
+                  >
+                    <ul className="w-full list-none text-[#75798A] font-inter-16px-regular font-normal text-[16px] leading-6 tracking-[0] align-middle space-y-1" style={{ fontFamily: 'Inter, Helvetica', fontWeight: 400, fontStyle: 'normal', letterSpacing: 0, lineHeight: '24px', verticalAlign: 'middle', paddingLeft: 0 }}>
+                      {plan.features.map((feature, i) => (
+                        <li key={i}>{feature}</li>
+                      ))}
+                    </ul>
                   </div>
                 </CardContent>
               </Card>
@@ -199,26 +259,36 @@ export const PricingSection = ({ sectionRef }: PricingSectionProps): JSX.Element
         </div>
       </div>
 
+      {/* Info text: show on all screens */}
+      <p className="block lg:hidden mx-auto max-w-[718px] text-[#75798a] text-center [font-family:'Inter',Helvetica] text-xs sm:text-sm leading-[var(--inter-13px-regular-line-height)] font-[number:var(--inter-16px-regular-font-weight)] tracking-[var(--inter-16px-regular-letter-spacing)] [font-style:var(--inter-16px-regular-font-style)] px-4 mb-2">
+        One-Time Installation Fee, Monthly Fee, Yearly Maintenance Fee applicable on all plans
+      </p>
+      {/* Only show below on lg and up */}
+      <div className="hidden lg:block w-full">
       <p className="mx-auto max-w-[718px] text-[#75798a] text-center [font-family:'Inter',Helvetica]  text-xs sm:text-sm lg:text-[length:var(--inter-13px-regular-font-size)] leading-[var(--inter-13px-regular-line-height)] font-[number:var(--inter-13px-regular-font-weight)] tracking-[var(--inter-13px-regular-letter-spacing)] [font-style:var(--inter-13px-regular-font-style)] px-4">
         One-Time Installation Fee, Monthly Fee, Yearly Maintenance Fee applicable on all plans
       </p>
-
       <Separator className="w-full max-w-[1028px] h-px mx-4" />
-
       <img className="w-[18px] h-[29px]" alt="Vg" src="/vg.svg" />
+      </div>
 
       <div className="w-full max-w-[1040px] px-4">
-        <h3 className="mb-[60px] font-inter-25px-regular font-[number:var(--inter-25px-regular-font-weight)] text-[#222530] text-xl sm:text-2xl lg:text-[length:var(--inter-25px-regular-font-size)] tracking-[var(--inter-25px-regular-letter-spacing)] leading-[var(--inter-25px-regular-line-height)] text-center lg:text-left [font-style:var(--inter-25px-regular-font-style)]">
+        {/* Compare plans heading only on lg and up */}
+        <h3 className="hidden lg:block mb-[60px] font-inter-25px-regular font-[number:var(--inter-25px-regular-font-weight)] text-[#222530] text-xl sm:text-2xl lg:text-[length:var(--inter-25px-regular-font-size)] tracking-[var(--inter-25px-regular-letter-spacing)] leading-[var(--inter-25px-regular-line-height)] text-left [font-style:var(--inter-25px-regular-font-style)]">
           Compare plans
         </h3>
 
-        <div className="overflow-x-auto">
+        {/* Only show the table on lg and up */}
+        <div className="hidden lg:block overflow-x-auto">
           <Table className="w-full min-w-[600px]">
             <TableHeader>
               <TableRow className="hover:bg-transparent border-none">
                 <TableHead className="w-[350px] min-w-[200px]"></TableHead>
-                {["Basic Plan", "Pro Plan", "Enterprise Plan"].map(
-                  (planTitle, index) => (
+                {[
+                  "Basic Plan",
+                  "Pro Plan",
+                  "Enterprise Plan"
+                ].map((planTitle, index) => (
                     <TableHead
                       key={`plan-title-${index}`}
                       className="text-center min-w-[120px]"
@@ -230,8 +300,7 @@ export const PricingSection = ({ sectionRef }: PricingSectionProps): JSX.Element
                         Contact us
                       </p>
                     </TableHead>
-                  ),
-                )}
+                ))}
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -302,11 +371,9 @@ export const PricingSection = ({ sectionRef }: PricingSectionProps): JSX.Element
               </div>
             </div>
             <div className="flex-1 flex justify-end">
-              <Button className="w-[170px] h-[46px] bg-[#05c168] rounded-[48px] shadow-[0px_2px_1px_#95a0b214] hover:bg-[#04a056] flex items-center justify-center">
-                <span className="font-normal text-white text-[15px] text-center tracking-[0] leading-6 whitespace-nowrap [font-family:'Inter',Helvetica]">
-                  Contact Us
-                </span>
-                <img className="w-6 h-6 ml-2" alt="Svg" src="/svg.svg" />
+              <Button className="w-[170px] h-[46px] bg-[#05c168] rounded-[48px] shadow-[0px_2px_1px_#95a0b214] hover:bg-[#04a056] flex items-center justify-center font-sans font-normal text-base leading-6 align-middle">
+                <span className="text-white text-center whitespace-nowrap align-middle">Contact Us</span>
+                <img className="w-6 h-6 ml-2 align-middle" alt="Svg" src="/svg.svg" />
               </Button>
             </div>
           </div>
@@ -341,11 +408,9 @@ export const PricingSection = ({ sectionRef }: PricingSectionProps): JSX.Element
               </div>
             </div>
 
-            <Button className="w-full sm:w-[170px] h-[46px] bg-[#05c168] rounded-[48px] shadow-[0px_2px_1px_#95a0b214] hover:bg-[#04a056]">
-              <span className="font-normal text-white text-[15px] text-center tracking-[0] leading-6 whitespace-nowrap ">
-                Contact Us
-              </span>
-              <img className="w-6 h-6 ml-2" alt="Svg" src="/svg.svg" />
+            <Button className="w-full sm:w-[170px] h-[46px] bg-[#05c168] rounded-[48px] shadow-[0px_2px_1px_#95a0b214] hover:bg-[#04a056] flex items-center font-sans font-normal text-base leading-6 align-middle">
+              <span className="text-white text-center whitespace-nowrap align-middle">Contact Us</span>
+              <img className="w-6 h-6 ml-2 align-middle" alt="Svg" src="/svg.svg" />
             </Button>
           </div>
         </CardContent>

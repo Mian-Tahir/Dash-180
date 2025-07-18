@@ -67,7 +67,7 @@ export const AboutUsSection = ({ sectionRef }: AboutUsSectionProps): JSX.Element
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section ref={sectionRef as any} className="w-full min-h-screen flex items-center justify-center px-6 sm:px-8 md:px-16 lg:px-24 xl:px-32 py-8 sm:py-12 md:py-16 lg:py-[60px] bg-white">
+    <section ref={sectionRef as any} className="w-full min-h-screen flex items-center justify-center px-6 sm:px-8 md:px-16 lg:px-24 xl:px-32 py-8 sm:py-12 md:py-1 lg:py-[60px]  lg:mx-28 bg-white">
       
       <motion.div
         ref={ref}
@@ -87,7 +87,7 @@ export const AboutUsSection = ({ sectionRef }: AboutUsSectionProps): JSX.Element
             ABOUT
           </span>
 
-          <h2 className="self-stretch [font-family:'Inter_Tight',Helvetica] font-normal text-black text-2xl sm:text-3xl md:text-4xl lg:text-[41px] tracking-[0] leading-[normal]">
+          <h2 className="self-stretch [font-family:'Inter_Tight',Helvetica] font-normal text-black text-xl sm:text-3xl md:text-3xl lg:text-[16px] tracking-[0] leading-relaxed">
             Empowering Business Leaders with Data-Driven Insights
           </h2>
 
@@ -146,12 +146,10 @@ export const AboutUsSection = ({ sectionRef }: AboutUsSectionProps): JSX.Element
             </CardContent>
           </Card>
 
-          <Button className="px-4 py-2.5 sm:px-5 lg:px-5 lg:py-2.5 bg-[#05c168] text-white rounded-[48px] hover:bg-[#04a056] w-fit">
-            <span className="[font-family:'Inter',Helvetica] font-normal text-sm sm:text-base tracking-[0] leading-6">
-              Optimize your revenue today
-            </span>
+          <Button className="px-4 py-2.5 sm:px-5 lg:px-5 lg:py-2.5 bg-[#05c168] text-white rounded-[48px] hover:bg-[#04a056] w-fit font-sans font-normal text-base leading-6 align-middle flex items-center">
+            <span className="align-middle">Optimize your revenue today</span>
             <img
-              className="w-3.5 h-[12.01px] ml-2"
+              className="w-3.5 h-[12.01px] ml-2 align-middle"
               alt="Arrow right"
               src="/arrow-right.svg"
             />

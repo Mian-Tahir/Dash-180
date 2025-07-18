@@ -64,10 +64,10 @@ export const FaqSection = ({ sectionRef }: FaqSectionProps): JSX.Element => {
                     value={`item-${index}`}
                     className={` "bg-white"} rounded-xl border border-solid border-[#e1e4ea] shadow-[0px_1px_0.5px_#95a0b114] mb-2`}
                   >
-                    <AccordionTrigger className="px-3 sm:px-6 py-3 sm:py-4 font-medium text-[#222530] text-sm sm:text-base text-left">
+                    <AccordionTrigger className="px-3 sm:px-6 py-3 sm:py-4 font-medium text-[#222530] text-[16px] leading-6 text-left [font-family:'Inter',Helvetica]">
                       {item.question}
                     </AccordionTrigger>
-                    <AccordionContent className="px-4 sm:px-[72px] pb-3 sm:pb-4 text-[#75798a] font-inter-16px-regular text-sm sm:text-base">
+                    <AccordionContent className="pl-8 pb-3 sm:pb-4 text-[#75798a] font-normal text-[16px] leading-6 text-left [font-family:'Inter',Helvetica]">
                       {item.answer}
                     </AccordionContent>
                   </AccordionItem>

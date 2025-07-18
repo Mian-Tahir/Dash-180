@@ -115,9 +115,9 @@ export const BenefitsSection = ({ sectionRef }: BenefitsSectionProps): JSX.Eleme
         </div>
 
         <div className="flex justify-center">
-          <Button className="bg-[#05c168] hover:bg-[#04a056] [font-family:'Inter',Helvetica] text-white rounded-[48px] px-8 py-6  md:px-12 md:py-6 lg:!py-8">
+          <Button className="bg-[#05c168] hover:bg-[#04a056] text-white rounded-[48px] px-8 py-6 md:px-12 md:py-6 lg:!py-8 font-sans font-normal text-base leading-6 align-middle flex items-center">
             Switch to Dash180 today
-            <ArrowRightIcon className="w-3.5 h-[16px]" />
+            <ArrowRightIcon className="w-3.5 h-[16px] align-middle" />
           </Button>
         </div>
       </div>

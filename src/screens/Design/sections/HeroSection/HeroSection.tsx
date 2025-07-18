@@ -56,33 +56,33 @@ export const HeroSection = ({ sectionRef }: HeroSectionProps): JSX.Element => {
             Transform Your Hotel's Performance with Dash180º!
           </div>
           <div className="flex flex-row gap-3 mt-14 w-full justify-center">
-            <Button className="bg-[#05c168] rounded-[48px] text-white font-normal text-base px-5 py-2.5 flex items-center gap-2.5">
+            <Button className="bg-[#05c168] rounded-[48px] text-white font-normal text-base leading-6 align-middle font-sans px-5 py-2.5 flex items-center gap-2.5">
               Get started today
-              <ArrowRightIcon className="w-3.5 h-[12.01px]" />
+              <ArrowRightIcon className="w-3.5 h-[12.01px] align-middle" />
             </Button>
-            <button className="flex items-center font-medium text-[#001943] text-base hover:text-[#05c168] hover:underline transition-colors duration-200">
+            <button className="flex items-center font-normal text-base leading-6 align-middle font-sans text-[#001943] hover:text-[#05c168] hover:underline transition-colors duration-200">
               Book a demo
-              <ArrowRightIcon className="w-5 h-5 ml-2 text-[#05c168]" />
+              <ArrowRightIcon className="w-5 h-5 ml-2 text-[#05c168] align-middle" />
             </button>
           </div>
         </div>
       </div>
 
       {/* Desktop layout: split, left lighter, right darker, image right */}
-      <div className="hidden lg:flex w-full h-[820px] px-16 xl:px-32">
+      <div className="hidden lg:flex w-full h-[820px]  gap-60 -ml-24 px-2 xl:px-12">
         {/* Left: lighter gradient, headings/buttons */}
         <div className="flex-1 relative flex items-center">
           <div className="absolute w-[574px] h-[449px] top-[211px] left-[199px]">
             <div className="absolute w-[358px] h-11 top-[405px] left-0 flex items-center gap-6 md:h-20 md:gap-10">
-              <Button className="bg-[#05c168] rounded-[48px] [font-family:'Inter',Helvetica]  text-white font-normal text-base px-5 py-2.5 flex items-center gap-2.5 md:text-xl md:px-8 md:py-6">
+              <Button className="bg-[#05c168] rounded-[48px] font-sans text-white font-normal text-base leading-6 align-middle px-5 py-2.5 flex items-center gap-2.5 md:text-xl md:px-8 md:py-6">
                 Get started today
-                <ArrowRightIcon className="w-6 h-6 ml-2 !md:w-12 !md:h-12" />
+                <ArrowRightIcon className="w-6 h-6 ml-2 align-middle !md:w-12 !md:h-12" />
               </Button>
               <div className="flex items-center group cursor-pointer">
-                <div className="font-medium text-[#001943] text-base tracking-[0] leading-6 whitespace-nowrap group-hover:text-[#05c168] group-hover:underline transition-colors duration-200 md:text-xl">
+                <div className="font-normal text-base leading-6 align-middle font-sans text-[#001943] tracking-[0] whitespace-nowrap group-hover:text-[#05c168] group-hover:underline transition-colors duration-200 md:text-xl">
                   Book a demo
                 </div>
-                <ArrowRightIcon className="w-8 h-8 ml-2 text-[#05c168] md:w-6 md:h-6" />
+                <ArrowRightIcon className="w-8 h-8 ml-2 text-[#05c168] align-middle md:w-6 md:h-6" />
               </div>
             </div>
             <div className="absolute w-[574px] h-6 top-[364px] left-0 [font-family:'Inter',Helvetica] font-normal text-[#0d1527cc] text-sm tracking-[0] leading-6">

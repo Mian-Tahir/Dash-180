@@ -10,12 +10,12 @@ export const FooterSection = (): JSX.Element => {
   ];
 
   // Resource links data
-  const resourceLinks = [
-    { name: "Culture Manual", href: "#" },
-    { name: "Resources", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "About", href: "#" },
-  ];
+  // const resourceLinks = [
+  //   { name: "Culture Manual", href: "#" },
+  //   { name: "Resources", href: "#" },
+  //   { name: "Blog", href: "#" },
+  //   { name: "About", href: "#" },
+  // ];
 
   // Office locations data
   const officeLocations = [
@@ -129,14 +129,8 @@ export const FooterSection = (): JSX.Element => {
                       @dash180degree.com
                     </a>
                     <span
-                      className="
-                        absolute left-0 bottom-[-6px] w-full h-[2px] 
-                        bg-[#f6f7f9]/40 
-                        transition-all duration-300 
-                        group-hover:bg-[#f6f7f9] 
-                        group-hover:h-[2px]
-                        z-0
-                      "
+                      className="absolute left-0 bottom-[-6px] w-full h-[2px] bg-[#f6f7f9]/40 transition-all duration-300 group-hover:bg-[#f6f7f9] group-hover:w-full origin-left scale-x-0 group-hover:scale-x-100 z-0"
+                      style={{ transformOrigin: 'left' }}
                     />
                   </span>
                 </div>
@@ -144,7 +138,7 @@ export const FooterSection = (): JSX.Element => {
 
               {/* Social links */}
               <div className="mt-8">
-                <h3 className="font-inter-16px-regular text-[#f6f7f9] text-base leading-4 mb-6">
+                <h3 className="font-inter-16px-bold text-[#f6f7f9] text-[16px] font-bold leading-[24px] mb-6">
                   Social
                 </h3>
                 <ul className="space-y-4">
@@ -152,7 +146,7 @@ export const FooterSection = (): JSX.Element => {
                     <li key={index}>
                       <a
                         href={link.href}
-                        className="font-inter-13px-regular text-[#f6f7f9] hover:underline"
+                        className="font-inter-13px-regular text-[#f6f7f9] text-[13px] font-normal leading-[13px] hover:underline"
                       >
                         {link.name}
                       </a>
@@ -162,8 +156,9 @@ export const FooterSection = (): JSX.Element => {
               </div>
 
               {/* Resources links */}
+              {/**
               <div className="mt-8">
-                <h3 className="font-inter-16px-regular text-[#f6f7f9] text-base leading-4 mb-6">
+                <h3 className="font-inter-16px-bold text-[#f6f7f9] text-[16px] font-bold leading-[24px] mb-6">
                   Resources
                 </h3>
                 <ul className="space-y-4">
@@ -171,7 +166,7 @@ export const FooterSection = (): JSX.Element => {
                     <li key={index}>
                       <a
                         href={link.href}
-                        className="font-inter-13px-regular text-[#f6f7f9] hover:underline"
+                        className="font-inter-13px-regular text-[#f6f7f9] text-[13px] font-normal leading-[13px] hover:underline"
                       >
                         {link.name}
                       </a>
@@ -179,16 +174,17 @@ export const FooterSection = (): JSX.Element => {
                   ))}
                 </ul>
               </div>
+              */}
 
               {/* Office locations */}
               <div className="mt-8">
-                <h3 className="font-inter-16px-regular text-[#f6f7f9] text-base leading-4 mb-6">
+                <h3 className="font-inter-16px-bold text-[#f6f7f9] text-[16px] font-bold leading-[24px] mb-6">
                   Office
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {officeLocations.map((office, index) => (
                     <div key={index} className="space-y-2">
-                      <p className="font-inter-13px-regular text-[#f6f7f9]">
+                      <p className="font-inter-13px-bold text-[#f6f7f9] text-[13px] font-bold leading-[13px]">
                         {office.country}
                       </p>
                       <p className="text-[#cbcbcb] text-[13px]  leading-[19.5px] font-normal">
@@ -208,18 +204,18 @@ export const FooterSection = (): JSX.Element => {
           <div className="flex space-x-12 items-center">
             <a
               href="#"
-              className="font-inter-11px-regular text-[#f6f7f9] border-b border-[#f6f7f9] pb-1 hover:underline"
+              className="font-inter-13px-regular text-[#f6f7f9] text-[13px] font-normal leading-[13px] border-b border-[#f6f7f9] pb-1 hover:underline transition-all duration-200"
             >
               Terms & Conditions
             </a>
             <a
               href="#"
-              className="font-inter-11px-regular text-[#f6f7f9] border-b border-[#f6f7f9] pb-1 hover:underline"
+              className="font-inter-13px-regular text-[#f6f7f9] text-[13px] font-normal leading-[13px] border-b border-[#f6f7f9] pb-1 hover:underline transition-all duration-200"
             >
               Privacy Policy
             </a>
           </div>
-          <p className=" text-[#848484]  whitespace-nowrap">
+          <p className="font-inter-13px-regular text-[#848484] text-[13px] font-normal leading-[13px] whitespace-nowrap">
             © 2025 DASH180º - All rights reserved
           </p>
         </div>

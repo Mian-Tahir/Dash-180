@@ -19,13 +19,12 @@ interface UseCasesSectionProps {
   sectionRef?: React.RefObject<HTMLElement>;
 }
 
-
 const features = [
   {
     key: "revenue-analytics",
     title: "Revenue Analytics",
-    icon: <img src="/analytics.png" alt="Revenue Analytics" className="w-8 h-8 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(347%) hue-rotate(180deg) brightness(103%) contrast(100%)' }} />,
-    iconActive: <img src="/analytics.png" alt="Revenue Analytics" className="w-8 h-8 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(65%) sepia(89%) saturate(2729%) hue-rotate(360deg) brightness(105%) contrast(104%)' }} />,
+    icon: <img src="/AnalyticsIcon.svg" alt="Revenue Analytics" className="w-8 h-8 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(347%) hue-rotate(180deg) brightness(103%) contrast(100%)' }} />,
+    iconActive: <img src="/AnalyticsIcon.svg" alt="Revenue Analytics" className="w-8 h-8 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(65%) sepia(89%) saturate(2729%) hue-rotate(360deg) brightness(105%) contrast(104%)' }} />,
     description: (
       <>
         <span className="block text-[#fbfbfb] font-inter-16px-regular text-sm sm:text-base leading-relaxed mt-4">
@@ -43,8 +42,8 @@ const features = [
   {
     key: "kpi-monitoring",
     title: "KPI Monitoring",
-    icon: <img src="/kpi.png" alt="KPI Monitoring" className="w-8 h-8 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(347%) hue-rotate(180deg) brightness(103%) contrast(100%)' }} />,
-    iconActive: <img src="/kpi.png" alt="KPI Monitoring" className="w-8 h-8 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(65%) sepia(89%) saturate(2729%) hue-rotate(360deg) brightness(105%) contrast(104%)' }} />,
+    icon: <img src="/KpiIcon.svg" alt="KPI Monitoring" className="w-8 h-8 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(347%) hue-rotate(180deg) brightness(103%) contrast(100%)' }} />,
+    iconActive: <img src="/KpiIcon.svg" alt="KPI Monitoring" className="w-8 h-8 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(65%) sepia(89%) saturate(2729%) hue-rotate(360deg) brightness(105%) contrast(104%)' }} />,
     description: (
       <>
         <span className="block text-[#fbfbfb] font-inter-16px-regular text-sm sm:text-base leading-relaxed mt-4">
@@ -62,8 +61,8 @@ const features = [
   {
     key: "forecasting-planning",
     title: "Forecasting & Planning",
-    icon: <img src="/forecasting.png" alt="Forecasting & Planning" className="w-8 h-8 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(347%) hue-rotate(180deg) brightness(103%) contrast(100%)' }} />,
-    iconActive: <img src="/forecasting.png" alt="Forecasting & Planning" className="w-8 h-8 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(65%) sepia(89%) saturate(2729%) hue-rotate(360deg) brightness(105%) contrast(104%)' }} />,
+    icon: <img src="/ForecastingIcon.svg" alt="Forecasting & Planning" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(347%) hue-rotate(180deg) brightness(103%) contrast(100%)' }} />,
+    iconActive: <img src="/ForecastingIcon.svg" alt="Forecasting & Planning" className="w-8 h-8 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(65%) sepia(89%) saturate(2729%) hue-rotate(360deg) brightness(105%) contrast(104%)' }} />,
     description: (
       <>
         <span className="block text-[#fbfbfb] font-inter-16px-regular text-sm sm:text-base leading-relaxed mt-4">
@@ -81,8 +80,8 @@ const features = [
   {
     key: "pl-analysis",
     title: "P&L Analysis",
-    icon: <img src="/p&l.png" alt="P&L Analysis" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(347%) hue-rotate(180deg) brightness(103%) contrast(100%)' }} />,
-    iconActive: <img src="/p&l.png" alt="P&L Analysis" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(74%) sepia(89%) saturate(1482%) hue-rotate(2deg) brightness(108%) contrast(101%)' }} />,
+    icon: <img src="/PLIcon.svg" alt="P&L Analysis" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(347%) hue-rotate(180deg) brightness(103%) contrast(100%)' }} />,
+    iconActive: <img src="/PLIcon.svg" alt="P&L Analysis" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(74%) sepia(89%) saturate(1482%) hue-rotate(2deg) brightness(108%) contrast(101%)' }} />,
     description: (
       <>
         <span className="block text-[#fbfbfb] font-inter-16px-regular text-sm sm:text-base leading-relaxed mt-4">
@@ -100,8 +99,8 @@ const features = [
   {
     key: "real-time-data",
     title: "Real-time Data Access",
-    icon: <img src="/real-time.png" alt="Real-time data access" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(347%) hue-rotate(180deg) brightness(103%) contrast(100%)' }} />,
-    iconActive: <img src="/real-time.png" alt="Real-time data access" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(74%) sepia(89%) saturate(1482%) hue-rotate(2deg) brightness(108%) contrast(101%)' }} />,
+    icon: <img src="/RealTimeIcon.svg" alt="Real-time data access" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(347%) hue-rotate(180deg) brightness(103%) contrast(100%)' }} />,
+    iconActive: <img src="/RealTimeIcon.svg" alt="Real-time data access" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(74%) sepia(89%) saturate(1482%) hue-rotate(2deg) brightness(108%) contrast(101%)' }} />,
     description: (
       <>
         <span className="block text-[#fbfbfb] font-inter-16px-regular text-sm sm:text-base leading-relaxed mt-4">
@@ -119,8 +118,8 @@ const features = [
   {
     key: "what-if-analysis",
     title: "What-if Analysis",
-    icon: <img src="/what.png" alt="What-if Analysis" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(347%) hue-rotate(180deg) brightness(103%) contrast(100%)' }} />,
-    iconActive: <img src="/what.png" alt="What-if Analysis" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(74%) sepia(89%) saturate(1482%) hue-rotate(2deg) brightness(108%) contrast(101%)' }} />,
+    icon: <img src="/WhatIfIcon.svg" alt="What-if Analysis" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(347%) hue-rotate(180deg) brightness(103%) contrast(100%)' }} />,
+    iconActive: <img src="/WhatIfIcon.svg" alt="What-if Analysis" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(74%) sepia(89%) saturate(1482%) hue-rotate(2deg) brightness(108%) contrast(101%)' }} />,
     description: (
       <>
         <span className="block text-[#fbfbfb] font-inter-16px-regular text-sm sm:text-base leading-relaxed mt-4">
@@ -138,8 +137,8 @@ const features = [
   {
     key: "segmentation",
     title: "Segmentation",
-    icon: <img src="/segmentation.png" alt="Segmentation" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(347%) hue-rotate(180deg) brightness(103%) contrast(100%)' }} />,
-    iconActive: <img src="/segmentation.png" alt="Segmentation" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(74%) sepia(89%) saturate(1482%) hue-rotate(2deg) brightness(108%) contrast(101%)' }} />,
+    icon: <img src="/SegmentationIcon.svg" alt="Segmentation" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(347%) hue-rotate(180deg) brightness(103%) contrast(100%)' }} />,
+    iconActive: <img src="/SegmentationIcon.svg" alt="Segmentation" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(74%) sepia(89%) saturate(1482%) hue-rotate(2deg) brightness(108%) contrast(101%)' }} />,
     description: (
       <>
         <span className="block text-[#fbfbfb] font-inter-16px-regular text-sm sm:text-base leading-relaxed mt-4">
@@ -157,8 +156,8 @@ const features = [
   {
     key: "company-agency-productions",
     title: "Company / Agency productions",
-    icon: <img src="/company.png" alt="Company / Agency productions" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(347%) hue-rotate(180deg) brightness(103%) contrast(100%)' }} />,
-    iconActive: <img src="/company.png" alt="Company / Agency productions" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(74%) sepia(89%) saturate(1482%) hue-rotate(2deg) brightness(108%) contrast(101%)' }} />,
+    icon: <img src="/CompanyIcon.svg" alt="Company / Agency productions" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(94%) sepia(3%) saturate(347%) hue-rotate(180deg) brightness(103%) contrast(100%)' }} />,
+    iconActive: <img src="/CompanyIcon.svg" alt="Company / Agency productions" className="w-5 h-5 object-contain" style={{ filter: 'brightness(0) saturate(100%) invert(74%) sepia(89%) saturate(1482%) hue-rotate(2deg) brightness(108%) contrast(101%)' }} />,
     description: (
       <>
         <span className="block text-[#fbfbfb] font-inter-16px-regular text-sm sm:text-base leading-relaxed mt-4">
@@ -177,11 +176,9 @@ const features = [
 
 export const UseCasesSection = ({ sectionRef }: UseCasesSectionProps): JSX.Element => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
-
-  // Animation for fade/slide-up
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
-
-  // Navigation handlers
+  const [imageLoaded, setImageLoaded] = useState(false);
+  
   const handlePrevFeature = () => {
     setActiveIndex((prev) => {
       if (prev === null) return 0;
@@ -196,8 +193,6 @@ export const UseCasesSection = ({ sectionRef }: UseCasesSectionProps): JSX.Eleme
     });
   };
 
-  // Image lazy loading and transition state
-  const [imageLoaded, setImageLoaded] = useState(false);
   useEffect(() => {
     setImageLoaded(false);
   }, [activeIndex]);
@@ -205,20 +200,23 @@ export const UseCasesSection = ({ sectionRef }: UseCasesSectionProps): JSX.Eleme
   return (
     <section
       ref={sectionRef as any}
-      className="w-full bg-[#002a71] py-8 sm:py-12 md:py-16 relative overflow-hidden px-6 sm:px-8 md:px-16 lg:px-24 xl:px-32"
+      className="w-full bg-[#002a71] py-8 sm:py-12 md:py-16 relative overflow-hidden px-6 sm:px-8 md:px-16 lg:px-24 xl:px-12"
     >
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:pl-8 lg:pr-0">
-        <div className="flex flex-col lg:flex-row gap-8 w-full">
+
+      
+      <div className="px-4 sm:px-6 lg:pl-8 lg:pr-0 md:mx-0 lg:mx-28">
+        <div className="flex flex-col lg:flex-row gap-16 w-full">
           {/* LEFT: Features/description + desktop buttons */}
           <div className="flex flex-col w-full lg:w-[455px] order-1">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[41px] text-[#e3e4e6] font-normal leading-tight font-['Inter_Tight',Helvetica]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[41px] text-[#e3e4e6] font-normal leading-relaxed font-['Inter_Tight',Helvetica]">
               AI-Powered Analytics &amp; Features
             </h2>
             <p className="mt-4 text-[#c9c9c9] font-inter-16px-regular text-sm sm:text-base">
               Smarter Revenue &amp; Performance Insights
             </p>
             <div className="mt-8 sm:mt-12">
-              <div className="rounded-xl overflow-hidden bg-transparent">
+              {/* Scrollable container with hidden scrollbar for desktop */}
+              <div  className="rounded-xl scrollbar-hidden overflow-auto lg:overflow-y-auto lg:max-h-[700px] lg:hide-scrollbar">
                 {features.map((feature, idx) => {
                   const isActive = activeIndex === idx;
                   return (
@@ -241,7 +239,12 @@ export const UseCasesSection = ({ sectionRef }: UseCasesSectionProps): JSX.Eleme
                       {isActive && feature.description && (
                         <div
                           id={`feature-panel-${feature.key}`}
-                          className="pl-12 pr-2 pb-4"
+                          className="pl-12 pr-2 pb-4 transition-all duration-300 ease-in-out overflow-hidden max-h-[700px] opacity-100"
+                          style={{
+                            maxHeight: isActive ? 500 : 0,
+                            opacity: isActive ? 1 : 0,
+                            transition: 'max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s cubic-bezier(0.4,0,0.2,1)'
+                          }}
                         >
                           {feature.description}
                         </div>
@@ -260,16 +263,17 @@ export const UseCasesSection = ({ sectionRef }: UseCasesSectionProps): JSX.Eleme
               </div>
             </div>
             <div className="hidden lg:flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-2.5 mt-8 sm:mt-12">
-              <Button className="bg-[#05c168] hover:bg-[#04a055] text-white rounded-full px-4 sm:px-6 py-2 sm:py-2.5 text-sm sm:text-base w-full sm:w-auto">
+              <Button className="bg-[#05c168] hover:bg-[#04a055] text-white rounded-full px-4 sm:px-6 py-2 sm:py-2.5 w-full sm:w-auto font-sans font-normal text-base leading-6 align-middle flex items-center">
                 Schedule a call
-                <ArrowRightIcon className="ml-2 h-3.5 w-3.5" />
+                <ArrowRightIcon className="ml-2 h-3.5 w-3.5 align-middle" />
               </Button>
-              <Button variant="ghost" className="text-white rounded-full px-4 sm:px-6 py-2 sm:py-2.5 text-sm sm:text-base w-full sm:w-auto">
+              <Button variant="ghost" className="text-white rounded-full px-4 sm:px-6 py-2 sm:py-2.5 w-full sm:w-auto font-sans font-normal text-base leading-6 align-middle flex items-center">
                 Learn More
-                <ArrowRightIcon className="ml-2 h-3.5 w-3.5" />
+                <ArrowRightIcon className="ml-2 h-3.5 w-3.5 align-middle" />
               </Button>
             </div>
           </div>
+          
           {/* RIGHT: Image + navigation + mobile buttons */}
           <div className="flex flex-col w-full lg:w-auto gap-3 lg:ml-48 order-2">
             <Card className="border-0 rounded-none overflow-hidden">
@@ -303,22 +307,30 @@ export const UseCasesSection = ({ sectionRef }: UseCasesSectionProps): JSX.Eleme
                 <ChevronRightIcon className="h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
             </div>
-            {/* Mobile Buttons */}
+            {/* Mobile Buttons - layout remains unchanged */}
             <div className="flex lg:hidden flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-2.5 mt-8 sm:mt-12 w-full">
-              <Button className="bg-[#05c168] hover:bg-[#04a055] text-white rounded-full px-4 sm:px-6 py-2 sm:py-2.5 text-sm sm:text-base w-full sm:w-auto">
+              <Button className="bg-[#05c168] hover:bg-[#04a055] text-white rounded-full px-4 sm:px-6 py-2 sm:py-2.5 w-full sm:w-auto font-sans font-normal text-base leading-6 align-middle flex items-center">
                 Schedule a call
-                <ArrowRightIcon className="ml-2 h-3.5 w-3.5" />
+                <ArrowRightIcon className="ml-2 h-3.5 w-3.5 align-middle" />
               </Button>
-              <Button variant="ghost" className="text-white rounded-full px-4 sm:px-6 py-2 sm:py-2.5 text-sm sm:text-base w-full sm:w-auto">
+              <Button variant="ghost" className="text-white rounded-full px-4 sm:px-6 py-2 sm:py-2.5 w-full sm:w-auto font-sans font-normal text-base leading-6 align-middle flex items-center">
                 Learn More
-                <ArrowRightIcon className="ml-2 h-3.5 w-3.5" />
+                <ArrowRightIcon className="ml-2 h-3.5 w-3.5 align-middle" />
               </Button>
             </div>
           </div>
         </div>
-        {/* Background decorative element - hidden on mobile for better performance */}
-     
       </div>
+        {/* Add CSS to hide scrollbar */}
+        <style>{`
+        .lg\:scrollbar-hide {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+        }
+        .lg\:scrollbar-hide::-webkit-scrollbar {
+          display: none;  /* Chrome, Safari, Opera */
+        }
+      `}</style>
     </section>
   );
 };

@@ -29,6 +29,7 @@ export const Design = (): JSX.Element => {
     <div className="bg-white flex flex-col items-center w-full">
         <Toaster position="top-right" reverseOrder={false} />
       <Navbar sectionRefs={sectionRefs} />
+    
       <HeroSection sectionRef={sectionRefs.home} />
       <AboutUsSection sectionRef={sectionRefs.about} />
       <UseCasesSection sectionRef={sectionRefs.usecases} />

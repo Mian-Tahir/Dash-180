@@ -203,7 +203,9 @@ export const FooterSection = (): JSX.Element => {
         <div className="container mx-auto px-4 flex flex-col md:flex-row md:items-center justify-between py-4 space-y-4 md:space-y-0">
           <div className="flex space-x-12 items-center">
             <a
-              href="#"
+              href="/terms-and-conditions"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-inter-13px-regular text-[#f6f7f9] text-[13px] font-normal leading-[13px] border-b border-[#f6f7f9] pb-1 hover:underline transition-all duration-200"
             >
               Terms & Conditions

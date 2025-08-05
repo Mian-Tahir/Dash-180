@@ -3,6 +3,8 @@ import Navbar from "../../../../components/ui/Navbar";
 import { FooterSection } from "../FooterSection/FooterSection";
 import { ArrowRightIcon } from "lucide-react";
 import { Button } from "../../../../components/ui/button";
+import{ContactSection} from "../ContactSection/ContactSection"
+
 const TermsAndConditionsSection: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col bg-[#f7fbff]">
@@ -10,7 +12,33 @@ const TermsAndConditionsSection: React.FC = () => {
       <Navbar />
 
       {/* Header Section */}
-      <div className="relative bg-[url('/hero-bg.png')] bg-cover bg-center bg-no-repeat bg-blend-multiply from-[#f7fbff] to-[#eaf3fa] py-16 px-4">
+      {/* Mobile Layout */}
+      <div className="md:hidden relative bg-[url('/hero-bg.png')] bg-cover bg-center bg-no-repeat bg-blend-multiply from-[#f7fbff] to-[#eaf3fa] py-8 px-4">
+        <div className="mx-4 flex flex-col items-start min-h-[350px]">
+          <div className="flex items-center mb-12 mt-32">
+            <span className="font-semibold text-base text-[#1a2e44]">DASH180°</span>
+          </div>
+          <h1 className="text-3xl font-semibold text-[#1a2e44] mb-6">Terms of Service</h1>
+          <p className="text-[#1a2e44] mb-6 text-sm whitespace-nowrap">
+            Transform Your Hotel's Performance with Dash180°
+          </p>
+          <div className="flex gap-3">
+            <Button className="bg-[#05c168] rounded-[48px] font-sans text-white font-normal text-sm leading-6 align-middle px-4 py-2 flex items-center gap-2">
+              Get started today
+              <ArrowRightIcon className="w-4 h-4 ml-2 align-middle" />
+            </Button>
+            <div className="flex items-center group cursor-pointer">
+              <div className="font-normal text-sm leading-6 align-middle font-sans text-[#001943] tracking-[0] whitespace-nowrap group-hover:text-[#05c168] group-hover:underline transition-colors duration-200">
+                Book a demo
+              </div>
+              <ArrowRightIcon className="w-6 h-6 ml-2 text-[#05c168] align-middle" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Layout - Original */}
+      <div className="hidden md:block relative bg-[url('/hero-bg.png')] bg-cover bg-center bg-no-repeat bg-blend-multiply from-[#f7fbff] to-[#eaf3fa] py-16 px-4">
         {/* SVG Decorations */}
         <img
           src="/Vector1.svg"
@@ -31,7 +59,7 @@ const TermsAndConditionsSection: React.FC = () => {
           </div>
           <h1 className="text-4xl font-semibold text-[#1a2e44] mb-8">Terms of Service</h1>
           <p className="text-[#1a2e44] mb-6">
-            Transform Your Hotel’s Performance with Dash180°
+            Transform Your Hotel's Performance with Dash180°
           </p>
           <div className="flex gap-4">
             <Button className="bg-[#05c168] rounded-[48px] font-sans text-white font-normal text-base leading-6 align-middle px-5 py-2.5 flex items-center gap-2.5 md:text-xl md:px-8 md:py-6">
@@ -50,7 +78,128 @@ const TermsAndConditionsSection: React.FC = () => {
 
       {/* Terms and Conditions Content */}
       
-      <div className="relative w-full bg-white">
+      {/* Mobile Content Layout */}
+      <div className="md:hidden relative w-full bg-white px-4 py-8">
+        <div className="max-w-full">
+          {/* 1. Acceptance of Terms */}
+          <div className="mb-8">
+            <h3 className="font-bold text-lg text-black mb-4">1. Acceptance of Terms</h3>
+            <p className="text-black text-base leading-6">
+              By using the Dash180° platform, you confirm your acceptance of these Terms and Conditions (T&Cs) and agree to follow them.
+            </p>
+          </div>
+
+          {/* 2. Services */}
+          <div className="mb-8">
+            <h3 className="font-bold text-lg text-black mb-4">2. Services</h3>
+            <p className="text-black text-base leading-6">
+              Dash180° provides data analytics and business intelligence tools designed to consolidate, interpret, and visualize business data. Features include real-time performance tracking, competitor benchmarking, and custom reporting. Access to the Platform is subscription-based, with licenses allocated to named users within an organization.
+            </p>
+          </div>
+
+          {/* 3. User Access and Licensing */}
+          <div className="mb-8">
+            <h3 className="font-bold text-lg text-black mb-4">3. User Access and Licensing</h3>
+            <ul className="list-disc pl-5 text-black text-base leading-6 space-y-2">
+              <li>Access to the Platform is granted on a subscription basis and is restricted to authorized, named users.</li>
+              <li>Users are prohibited from reselling, redistributing, reverse-engineering, or using the Platform for competitive analysis or unlawful purposes.</li>
+              <li>You must promptly report any unauthorized access or security breaches to Dash180Degrees.</li>
+            </ul>
+          </div>
+
+          {/* 4. Subscription and Payments */}
+          <div className="mb-8">
+            <h3 className="font-bold text-lg text-black mb-4">4. Subscription and Payments</h3>
+            <ul className="list-disc pl-5 text-black text-base leading-6 space-y-2">
+              <li>Subscription fees are billed annually and must be paid on time as outlined during the signup process.</li>
+              <li>Late payments may incur additional charges.</li>
+              <li>Subscription terms automatically renew unless canceled as per the instructions provided.</li>
+            </ul>
+          </div>
+
+          {/* 5. Data Privacy */}
+          <div className="mb-8">
+            <h3 className="font-bold text-lg text-black mb-4">5. Data Privacy</h3>
+            <p className="text-black text-base leading-6">
+              Dash180° is committed to protecting your data. We comply with relevant data protection laws, including the EU General Data Protection Regulation (GDPR) and the Kingdom of Saudi Arabia's Personal Data Protection Law (PDPL). For more information, please refer to our Privacy Policy.
+            </p>
+          </div>
+
+          {/* 6. Intellectual Property */}
+          <div className="mb-8">
+            <h3 className="font-bold text-lg text-black mb-4">6. Intellectual Property</h3>
+            <p className="text-black text-base leading-6">
+              All intellectual property related to the Dash180° platform, including but not limited to algorithms, dashboards, and reports, remains the property of Dash180Degrees. Subscribers are granted a limited license to use the platform for internal business purposes.
+            </p>
+          </div>
+
+          {/* 7. Limitation of Liability */}
+          <div className="mb-8">
+            <h3 className="font-bold text-lg text-black mb-4">7. Limitation of Liability</h3>
+            <ul className="list-disc pl-5 text-black text-base leading-6 space-y-2">
+              <li>Dash180Degrees is not liable for indirect, punitive, or consequential damages.</li>
+              <li>Our total liability under these T&Cs is limited to the subscription fees paid in the past 12 months.</li>
+            </ul>
+          </div>
+
+          {/* 8. Confidentiality */}
+          <div className="mb-8">
+            <h3 className="font-bold text-lg text-black mb-4">8. Confidentiality</h3>
+            <ul className="list-disc pl-5 text-black text-base leading-6 space-y-2">
+              <li>Users must treat all information, features, and tools provided by the Platform as confidential and must not disclose such information to unauthorized parties.</li>
+            </ul>
+          </div>
+
+          {/* 9. Termination */}
+          <div className="mb-8">
+            <h3 className="font-bold text-lg text-black mb-4">9. Termination</h3>
+            <ul className="list-disc pl-5 text-black text-base leading-6 space-y-2">
+              <li>Either party may terminate the subscription for any breach of these T&Cs.</li>
+              <li>Upon termination, access to the Platform and its features will be revoked immediately.</li>
+            </ul>
+          </div>
+
+          {/* 10. Governing Law */}
+          <div className="mb-8">
+            <h3 className="font-bold text-lg text-black mb-4">10. Governing Law</h3>
+            <p className="text-black text-base leading-6">
+              These T&Cs are governed by the laws of the Kingdom of Saudi Arabia, with disputes resolved in Jeddah courts.
+            </p>
+          </div>
+
+          {/* 11. Changes to Terms */}
+          <div className="mb-8">
+            <h3 className="font-bold text-lg text-black mb-4">11. Changes to Terms</h3>
+            <p className="text-black text-base leading-6">
+              Dash180Degrees reserves the right to update these T&Cs at any time. Continued use of the Platform constitutes acceptance of the updated terms.
+            </p>
+          </div>
+
+          {/* 12. Contact */}
+          <div className="mb-8">
+            <h3 className="font-bold text-lg text-black mb-10">12. Contact</h3>
+            <p className="text-black text-base leading-6">
+              For questions or concerns about these T&Cs, please contact us at: Email:{" "}
+              <a
+                href="mailto:contactus@dash180degree.com"
+                rel="noopener noreferrer"
+                target="_blank"
+                className="underline text-blue-600"
+              >
+                contactus@dash180degree.com
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Contact Section for Mobile */}
+      <div className="md:hidden">
+        <ContactSection />
+      </div>
+
+      {/* Desktop Content Layout - Original */}
+      <div className="hidden md:block relative w-full bg-white">
   {/* Decorative vector */}
   <img
     className="w-[27px] h-[42px] mx-auto"
@@ -312,7 +461,7 @@ const TermsAndConditionsSection: React.FC = () => {
       </div>
 
       {/* Contact Section (12) */}
-      <div className="border-none shadow-none  mb-8">
+      <div className="border-none shadow-none  mb-20">
         <div className="flex flex-col items-start gap-4 p-0">
           <div className="flex flex-col items-start gap-6 w-full">
             <h3 className="font-semibold text-base tracking-normal text-black font-['Inter_Tight',Helvetica]">

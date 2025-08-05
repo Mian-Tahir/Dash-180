@@ -1,4 +1,5 @@
-import  { useRef } from "react";
+import  { useRef, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import Navbar from "../../components/ui/Navbar";
 
@@ -14,6 +15,7 @@ import { UseCasesSection } from "./sections/UseCasesSection";
 
 
 export const Design = (): JSX.Element => {
+  const location = useLocation();
   const sectionRefs = {
     home: useRef<HTMLElement>(null),
     about: useRef<HTMLElement>(null),
@@ -24,6 +26,21 @@ export const Design = (): JSX.Element => {
     pricing: useRef<HTMLElement>(null),
     contact: useRef<HTMLElement>(null),
   };
+
+  // Handle hash navigation when coming from Terms page
+  useEffect(() => {
+    if (location.hash) {
+      const sectionId = location.hash.substring(1); // Remove the # symbol
+      const sectionRef = sectionRefs[sectionId as keyof typeof sectionRefs];
+      
+      if (sectionRef?.current) {
+        // Add a small delay to ensure the page is fully loaded
+        setTimeout(() => {
+          sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location.hash, sectionRefs]);
 
   return (
     <div className="bg-white flex flex-col items-center w-full">

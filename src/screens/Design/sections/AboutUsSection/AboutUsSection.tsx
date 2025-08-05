@@ -1,8 +1,6 @@
 import React from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import { useRef, useState, useEffect } from "react";
 
 interface AboutUsSectionProps {
@@ -63,24 +61,12 @@ export const AboutUsSection = ({ sectionRef }: AboutUsSectionProps): JSX.Element
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Animation for fade/slide-up
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
-
   return (
     <section ref={sectionRef as any} className="w-full min-h-screen flex items-center justify-center px-6 sm:px-8 md:px-16 lg:px-24 xl:px-32 py-8 sm:py-12 md:py-1 lg:py-[60px]  lg:mx-28 bg-white">
       
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 40 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-[80px] w-full max-w-[1400px] mx-auto"
-      >
-        <motion.div
-          style={{ y: parallax * 0.5 }}
-          initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: parallax * 0.5 } : {}}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-[80px] w-full max-w-[1400px] mx-auto">
+        <div
+          style={{ transform: `translateY(${parallax * 0.5}px)` }}
           className="w-full lg:max-w-[420px] flex flex-col gap-6 lg:gap-[28px]"
         >
           <span className="self-stretch font-inter-13px-regular text-[#001943] text-xs sm:text-sm lg:text-[length:var(--inter-13px-regular-font-size)] tracking-[var(--inter-13px-regular-letter-spacing)] leading-[var(--inter-13px-regular-line-height)] whitespace-nowrap">
@@ -154,21 +140,18 @@ export const AboutUsSection = ({ sectionRef }: AboutUsSectionProps): JSX.Element
               src="/arrow-right.svg"
             />
           </Button>
-        </motion.div>
+        </div>
 
         <div className="w-full lg:flex-1 flex justify-center items-center relative">
-          <motion.img
+          <img
             ref={imageRef}
             className="w-full max-w-[350px] sm:max-w-[400px] lg:w-[700px]  lg:h-[700px] "
             alt="Dashboard preview"
             srcSet="/Group-39232.png"
-            style={{ y: parallax }}
-            initial={{ opacity: 0, y: 40 }}
-            animate={inView ? { opacity: 1, y: parallax } : {}}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            style={{ transform: `translateY(${parallax}px)` }}
           />
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
